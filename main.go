@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"jmstorm/search-engine/routes"
 	"log"
 	"os"
 	"os/signal"
@@ -30,6 +31,8 @@ func main() {
 	})
 
 	app.Use(compress.New())
+
+	routes.SetRoutes(app)
 
 	// Start our server and listen for a shutdown
 
